@@ -30,7 +30,7 @@ Voce carrega a biblioteca com `loadstring`, cria sua janela em poucas linhas e t
 2. Troque `seu-usuario` pelo seu usuario nas URLs abaixo.
 
 ```lua
-local Potato = loadstring(game:HttpGet("https://raw.githubusercontent.com/seu-usuario/potato-ui/main/PotatoUI.lua"))()
+local Potato = loadstring(game:HttpGet("https://raw.githubusercontent.com/reddotstudios001-design/potate/main/PotatoUI.lua"))()
 ```
 
 Ou, se preferir nao depender de HTTP, cole o conteudo do `PotatoUI.lua` direto no topo do seu script (ele termina com `return Potato`, entao fica identico).
