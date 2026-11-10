@@ -1534,6 +1534,7 @@ function Potato:CreateWindow(opts)
 	local CreationOrder = {}
 
 	local UserTabCount = 0
+	local InternalTabs = {} -- tabObj interno por nome (usado pelos builders embutidos)
 
 	local function CreateTab(name, iconName, isBuiltIn)
 		if type(name) ~= "string" or name == "" then
@@ -1705,6 +1706,7 @@ function Potato:CreateWindow(opts)
 		}
 
 		UI.Tabs[name] = tabObj
+		InternalTabs[name] = tabObj
 		tabObj.IsBuiltIn = isBuiltIn == true
 		local hasSavedOrder = type(Saved) == "table" and type(Saved.TabOrder) == "table"
 		if isBuiltIn then
@@ -3745,7 +3747,7 @@ function Potato:CreateWindow(opts)
 		if opts.ShowSettingsTab ~= false then
 			local SettingsTab = CreateTab("settings", "settings", true)
 
-			AddThemeSelector(SettingsTab)
+			AddThemeSelector(InternalTabs.settings)
 			SettingsTab:AddToggle({
 				Id = "UseGradient",
 				Title = "Theme Gradient",
@@ -3829,7 +3831,7 @@ function Potato:CreateWindow(opts)
 					UpdateWatermark(true)
 				end
 			})
-			AddWatermarkPresets(SettingsTab)
+			AddWatermarkPresets(InternalTabs.settings)
 			SettingsTab:AddToggle({
 				Id = "WmShowLogo",
 				Title = "Watermark: Logo",
