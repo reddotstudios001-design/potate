@@ -38,7 +38,7 @@ Ou, se preferir nao depender de HTTP, cole o conteudo do `PotatoUI.lua` direto n
 ## Uso rapido
 
 ```lua
-local Potato = loadstring(game:HttpGet("https://raw.githubusercontent.com/seu-usuario/potato-ui/main/PotatoUI.lua"))()
+local Potato = loadstring(game:HttpGet("https://raw.githubusercontent.com/reddotstudios001-design/potate/main/PotatoUI.lua"))()
 
 local Window = Potato:CreateWindow({
 	Name = "meu script",
